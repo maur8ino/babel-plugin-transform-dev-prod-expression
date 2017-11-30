@@ -1,0 +1,37 @@
+{
+  "name": "babel-plugin-transform-dev-prod-expression",
+  "version": "1.0.0",
+  "description": "Transform __DEV__ and __PROD__ expressions evaluating process.env.NODE_ENV",
+  "repository": "https://github.com/maur8ino/babel-plugin-transform-dev-prod-expression",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "ava": {
+    "require": [
+      "babel-register"
+    ],
+    "babel": "inherit"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ]
+  },
+  "scripts": {
+    "clean": "rimraf lib",
+    "build": "babel src -d lib",
+    "test": "ava",
+    "test:watch": "npm test -- --watch",
+    "prepublish": "npm run clean && npm run build"
+  },
+  "keywords": [
+    "babel",
+    "babel-plugin"
+  ],
+  "devDependencies": {
+    "ava": "^0.24",
+    "babel-cli": "^6.2.0",
+    "babel-core": "^6.2.1",
+    "babel-preset-env": "^1.6.1",
+    "rimraf": "^2.4.3"
+  }
+}
