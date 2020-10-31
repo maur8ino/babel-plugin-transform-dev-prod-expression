@@ -6,15 +6,9 @@
   "license": "MIT",
   "main": "lib/index.js",
   "ava": {
-    "require": [
-      "babel-register"
-    ],
-    "babel": "inherit"
-  },
-  "babel": {
-    "presets": [
-      "env"
-    ]
+		"require": [
+			"@babel/register"
+		]
   },
   "scripts": {
     "clean": "rimraf lib",
@@ -28,10 +22,12 @@
     "babel-plugin"
   ],
   "devDependencies": {
-    "ava": "^0.24",
-    "babel-cli": "^6.2.0",
-    "babel-core": "^6.2.1",
-    "babel-preset-env": "^1.6.1",
-    "rimraf": "^2.4.3"
+    "@ava/babel": "^1.0.1",
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/register": "^7.12.1",
+    "ava": "^3.12.1",
+    "rimraf": "^3.0.2"
   }
 }

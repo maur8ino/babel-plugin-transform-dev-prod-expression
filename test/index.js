@@ -1,5 +1,5 @@
 import test from 'ava';
-import { transform } from 'babel-core';
+import { transform } from '@babel/core';
 import plugin from '../src';
 
 function trim(str) {
@@ -13,7 +13,7 @@ if (__DEV__) {
 }
   `;
   const expected = `
-if (process.env.NODE_ENV === 'development') {
+if (process.env.NODE_ENV === "development") {
   console.log('only in dev!');
 }
   `;
@@ -28,7 +28,7 @@ if (__PROD__) {
 }
   `;
   const expected = `
-if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === "production") {
   console.log('only in prod!');
 }
   `;
@@ -43,7 +43,7 @@ if (!__DEV__) {
 }
   `;
   const expected = `
-if (!(process.env.NODE_ENV === 'development')) {
+if (!(process.env.NODE_ENV === "development")) {
   console.log('not in dev!');
 }
   `;
@@ -58,7 +58,7 @@ if (!__PROD__) {
 }
   `;
   const expected = `
-if (!(process.env.NODE_ENV === 'production')) {
+if (!(process.env.NODE_ENV === "production")) {
   console.log('not in prod!');
 }
   `;
